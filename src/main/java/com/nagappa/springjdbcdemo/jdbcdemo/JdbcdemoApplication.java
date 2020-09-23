@@ -21,7 +21,10 @@ public class JdbcdemoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		logger.info("All users --> {}",dao.findAll());
+		logger.info("\nAll users --> {}",dao.findAll());
+		logger.info("\nUser id is 10001 -->{}",dao.findById(10001));
+		logger.info("\ndeleting id 10002 --> No of rows deleted-->{}",dao.deleteById(10002));
+		logger.info("\nAfter Deleting All users --> {}",dao.findAll());
 	}
 
 }
