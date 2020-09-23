@@ -1,11 +1,14 @@
 package com.nagappa.springjdbcdemo.jdbcdemo;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import com.nagappa.springjdbcdemo.entity.Person;
@@ -20,6 +23,21 @@ public class PersonJdbcDao {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 	
+	
+	class PersonRowMapper implements RowMapper<Person>{
+
+		@Override
+		public Person mapRow(ResultSet rs, int rowNum) throws SQLException {
+			Person person = new Person();
+			person.setId(rs.getInt("id"));
+			person.setName(rs.getString("name"));
+			person.setLocation(rs.getString("location"));
+			person.setBirthDate(rs.getTimestamp("birth_date"));
+			return person;
+		}
+		
+		
+	}
 	//select * from person
 	public List<Person> findAll(){
 		return jdbcTemplate.query("select * from person",
