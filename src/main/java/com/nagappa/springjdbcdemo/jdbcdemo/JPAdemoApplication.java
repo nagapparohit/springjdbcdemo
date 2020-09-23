@@ -8,7 +8,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.nagappa.springjdbcdemo.jdbcdemo.jpa.PersonJPARepo;
-
+/**
+ * This will automatically create becuase hibernate have schema update feautre as spring sees entity ,jpa in classpath
+ * @author 91783
+ *
+ */
 @SpringBootApplication
 public class JPAdemoApplication implements CommandLineRunner {
 
