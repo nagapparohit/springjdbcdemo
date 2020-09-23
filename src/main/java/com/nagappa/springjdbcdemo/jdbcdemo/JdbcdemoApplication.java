@@ -9,14 +9,14 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.nagappa.springjdbcdemo.entity.Person;
+import com.nagappa.springjdbcdemo.jdbcdemo.entity.Person;
 
-@SpringBootApplication
+//@SpringBootApplication
 public class JdbcdemoApplication implements CommandLineRunner {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
-	@Autowired
+	//@Autowired
 	PersonJdbcDao dao;
 	
 	public static void main(String[] args) {
