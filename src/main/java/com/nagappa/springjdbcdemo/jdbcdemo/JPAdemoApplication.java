@@ -42,13 +42,11 @@ public class JPAdemoApplication implements CommandLineRunner {
 		logger.info("\nupdate 10003 --> No of rows changed-->{}",repository.update(new
 				  Person(10003,"peter","Delhi", new Date())));
 				 
+		//unfortnately we cannot use logger here as it return void
+		repository.deleteById(10002);
 				 
-		
-		/*
-		 * logger.info("\nAll users --> {}",dao.findAll());
-		 * logger.info("\ndeleting id 10002 --> No of rows deleted-->{}",dao.deleteById(
-		 * 10002)); logger.info("\nAfter Deleting All users --> {}",dao.findAll());
-		 */	  
+		logger.info("\nAll users --> {}",repository.findAll());
+		   
 		
 		 
 		
